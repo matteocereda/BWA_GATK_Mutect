@@ -5,9 +5,6 @@
 
 #$ -j y
 
-#$ -e /home/ceredam/CRC/Mutect/log/
-#$ -o /home/ceredam/CRC/Mutect/log/
-
 ## Job Name, can be anything##
 #$ -N Mut.uh6_T
 
@@ -26,8 +23,6 @@ folder=$3
 bam="/home/FC/ClonalExpansion/WholeExome/$folder/$sample/mutect/$sample.sam.dedupped.recal.bam"
 Nbam="/home/FC/ClonalExpansion/WholeExome/$folder/$normal/mutect/$normal.sam.dedupped.recal.bam"
 
-# bam="/home/FC/ClonalExpansion/WholeExome/$folder/$sample/mutect/$sample.sam_srt_OT.bam"
-# Nbam="/home/FC/ClonalExpansion/WholeExome/$folder/$normal/mutect/$normal.sam_srt_OT.bam"
 outfolder="/home/FC/ClonalExpansion/WholeExome/$folder/$sample/mutect"
 
 

@@ -7,9 +7,6 @@
 
 ## Job Name, can be anything##
 
-#$ -M matteo.cereda@kcl.ac.uk
-#$ -m e
-
 ## Set the SHELL type to be sh##
 #$ -S /bin/sh
 
@@ -176,15 +173,4 @@ $GATK -T BaseRecalibrator -R $genome_ref -I $fout.dedupped.bam  -knownSites $DBS
 #B. Apply the recalibration model
 
 $GATK -T PrintReads -R $genome_ref -I $fout.dedupped.bam -BQSR recalibration.table -o $fout.dedupped.recal.bam
-
-#C. Run the post-recalibration analysis
-
-# $GATK -T BaseRecalibrator -R $genome_ref -I $fout.dedupped.recal.bam -knownSites $DBSNP138 -o post_recalibration.table
-
-#D. Generate and interpret recalibration plots
-
-# $GATK -T AnalyzeCovariates -R $genome_ref -before recalibration.table -after post_recalibration.table -plots recalibration_plots.pdf
-
-
-# $PICARD/ReorderSam.jar I=$fout.dedupped.recal.bam O=$fout.dedupped.recal.reordered.bam R=${genome_ref} CREATE_INDEX=true
 
